@@ -80,7 +80,7 @@ const b = ++a;
 console.log(`a:${a}, b:${b}`);
 
 /* 
-// UNDERSTANDIND PREFIX POSTFIX
+// UNDERSTANDING PREFIX POSTFIX
 
 in the prefix the operator is used before the value or operand (++x) "the increment operator increments the value after incrementing."
 
