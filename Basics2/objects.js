@@ -110,5 +110,34 @@ users[1].email
 // console.log(metaUser.hasOwn('isLogged'));
 
 
-console.log(metaUser.hasOwnProperty('isLoggedIn'));
+// console.log(metaUser.hasOwnProperty('isLoggedIn'));
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+// destructoring :-
+
+const course = {
+    coursename: "tailwind 0 to 1",
+    price: "999",
+    courseInstructor: "harsh"
+}
+
+// course.courseInstructor
+
+const {courseInstructor : instructor} = course
+
+// console.log(courseInstructor);  
+console.log(instructor);  
+
+
+// {
+//     "name" : "harsh"
+//     "coursename": "js from 0 to 100",
+//     "price": "free"
+// }
+
+[
+    {},
+    {},
+]
 
