@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h1>Lorem ipsum dolor sit amet.</h1>
+    <button id="stop">stop</button>
+</body>
+<script> 
+    const sayharsh = function(){
+        console.log("harsh");
+    }
+    const changeText = function() {
+        document.querySelector('h1').innerHTML = " Lorem ipsum dolor, sit amet consectetur adipisicing. "
+    }
+
+    const changeMe = setTimeout(changeText,2000)
+
+    document.querySelector('#stop' ).addEventListener('click', function() {
+        clearTimeout(changeMe)
+        console.log("stopped");
+    })
+
+</script>
+</html>
+
