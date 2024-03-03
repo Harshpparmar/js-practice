@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h1>Lorem ipsum dolor sit amet. hp</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+<script> 
+
+    // this method is doable but not effective in repeating the task \\\\\\\\\\\\\\\\\\
+    // const sayDate = function(str) {
+    //     console.log(str, Date.now());
+    // }
+
+
+    // const intervalId = setInterval(sayDate, 1000 , "heyy");
+
+    // // const clearEnd = clearInterval(intervalId)
+
+    // document.querySelector('#stop' ).addEventListener('click', function() {
+    //     clearInterval(intervalId);
+    //     console.log("stopped");
+    // })
+
+    // document.querySelector('#start').addEventListener('click' , function() {
+    //     setInterval(sayDate, 1000 , "heyy");
+    //     console.log("resumed");
+    // })
+
+
+    const start = function() {
+            console.log("harsh", Date.now());
+        };
+
+        let toStop; // Variable to hold setInterval ID
+        
+        document.querySelector('#start').addEventListener('click', function() {
+            // Start the interval and store its ID in 'toStop'
+            toStop = setInterval(start, 1000 );
+            // console.log("started");
+        });
+        
+        document.querySelector("#stop").addEventListener("click", function () {
+            // Clear the interval using the stored ID
+            clearInterval(toStop);
+            console.log("ends");
+            toStop = null;
+        });
+
+
+
+</script>
+</html>
+
