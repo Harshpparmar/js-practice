@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.card-border-top {
+            border-top: 2px solid #ccc;
+            margin-top: 10px;
+        }
+        .img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 10px auto;
+        }
+        .img img {
+            width: 100%;
+            height: 100%;
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+        .card img {
+            width: 100%;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body style="background-color: #414141; color: #fff;">
+    <div class="card">
+        <div class="card-border-top">
+
+        </div>
+        <div class="img">
+            <img src="" id="avatar">
+        </div>
+        <span id="username"></span>
+        <p id="followers"></p>
+        <p class="job" id="job">tutor</p>
+        <!-- <button id="link">Click</button> -->
+    </div>
+
+
+    <!--
+        0	UNSENT	         Client has been created. open() not called yet.
+
+        1	OPENED	         open() has been called.
+
+        2	HEADERS_RECEIVED      send() has been called, and headers and status are available.
+
+        3	LOADING	Downloading;  responseText holds partial data.
+
+        4	DONE	   The operation is complete.
+    -->
+    
+</body>
+<script>
+    // const requstUrl = 'https://api.github.com/users/harshpparmar'
+    // const requstUrl = 'https://api.github.com/users/palakparmartntra'
+    const requstUrl = 'https://api.github.com/users/hiteshchoudhary'
+    const xhr =  new XMLHttpRequest();
+    xhr.open('GET' , requstUrl)
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText)  // followers , photo == card 
+            console.log(data.followers);
+            console.log(data.avatar_url);
+            
+            document.getElementById('avatar').src = data.avatar_url;
+            document.getElementById('username').textContent = data.login;
+            document.getElementById('followers').textContent = data.followers;
+        }
+    }
+    xhr.send();
+
+
+
+</script>
+</html>
